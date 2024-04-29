@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic HTML Content</title>
+</head>
+<body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const htmlContent = urlParams.get('html');
+  
+  if (htmlContent) {
+    document.body.innerHTML = htmlContent;
+  } else {
+    document.body.innerHTML = '<p>No HTML content provided.</p>';
+  }
+});
+</script>
+
+</body>
+</html>
